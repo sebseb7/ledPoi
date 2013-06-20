@@ -1,5 +1,7 @@
 #include "main.h"
 
+#include "core/inc/ssp1.h"
+
 /*
 
 	data sheet  : http://www.nxp.com/documents/data_sheet/LPC1315_16_17_45_46_47.pdf
@@ -32,14 +34,6 @@ int main(void) {
 	// clock to GPIO
 	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<6);
 
-	// SCK1
-	LPC_IOCON->PIO1_20  &= ~0x07;
-	LPC_IOCON->PIO1_20  |= 0x02;
-
-	// MOSI1
-	LPC_IOCON->PIO1_22  &= ~0x07;
-	LPC_IOCON->PIO1_22  |= 0x02;
-	
 	// AD0
 	LPC_IOCON->TDI_PIO0_11  &= ~0x07;
 	LPC_IOCON->TDI_PIO0_11  |= 0x02;
@@ -48,10 +42,25 @@ int main(void) {
 	LPC_IOCON->PIO0_1  &= ~0x18;
 	LPC_IOCON->PIO0_1  |= 0x10;
 
+	ssp1Init();
 
 
 	while(1)
 	{
+		uint8_t send_buffer[10];
+		send_buffer[0]=0;
+		send_buffer[1]=1;
+		send_buffer[2]=2;
+		send_buffer[3]=10;
+		send_buffer[4]=20;
+		send_buffer[5]=30;
+		send_buffer[6]=40;
+		send_buffer[7]=50;
+		send_buffer[8]=60;
+		send_buffer[9]=70;
+		ssp1Send(send_buffer, 10);
+
+		delay_ms(100);
 	}
 }
 
