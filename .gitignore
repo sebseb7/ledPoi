@@ -2,4 +2,4 @@
 *.lst
 *.bin
 *.elf
-tools/lpcrc/lpcrc
+firmware/tools/lpcrc/lpcrc
