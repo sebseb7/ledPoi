@@ -14,6 +14,8 @@
 
 */
 
+static const uint8_t color_correction[256] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,4,4,4,4,4,5,5,5,5,5,5,5,5,5,6,6,6,6,6,6,6,7,7,7,7,7,7,7,8,8,8,8,8,8,9,9,9,9,9,10,10,10,10,10,11,11,11,11,12,12,12,12,13,13,13,13,14,14,14,14,15,15,15,16,16,16,17,17,17,18,18,18,19,19,20,20,20,21,21,22,22,23,23,23,24,24,25,25,26,26,27,27,28,29,29,30,30,31,32,32,33,33,34,35,35,36,37,38,38,39,40,41,41,42,43,44,45,46,47,48,48,49,50,51,52,53,54,56,57,58,59,60,61,62,64,65,66,67,69,70,71,73,74,76,77,79,80,82,83,85,87,88,90,92,93,95,97,99,101,103,105,107,109,111,113,115,118,120,122,125,127};
+
 volatile uint32_t msTicks = 0;
 
 void SysTick_Handler(void) {
@@ -47,20 +49,26 @@ int main(void) {
 
 	while(1)
 	{
-		uint8_t send_buffer[10];
-		send_buffer[0]=0;
-		send_buffer[1]=1;
-		send_buffer[2]=2;
-		send_buffer[3]=10;
-		send_buffer[4]=20;
-		send_buffer[5]=30;
-		send_buffer[6]=40;
-		send_buffer[7]=50;
-		send_buffer[8]=60;
-		send_buffer[9]=70;
-		ssp1Send(send_buffer, 10);
+		ssp1SendByte(0x80 | color_correction[0] );
+		ssp1SendByte(0x80 | color_correction[0] );
+		ssp1SendByte(0x80 | color_correction[25] );
 
-		delay_ms(100);
+		ssp1SendByte(0x80 | color_correction[0] );
+		ssp1SendByte(0x80 | color_correction[25] );
+		ssp1SendByte(0x80 | color_correction[0] );
+
+		ssp1SendByte(0x80 | color_correction[25] );
+		ssp1SendByte(0x80 | color_correction[0] );
+		ssp1SendByte(0x80 | color_correction[0] );
+
+		ssp1SendByte(0x80 | color_correction[25] );
+		ssp1SendByte(0x80 | color_correction[25] );
+		ssp1SendByte(0x80 | color_correction[25] );
+	
+
+		ssp1SendByte(0);
+		
+		//delay_ms(100);
 	}
 }
 
