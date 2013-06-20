@@ -190,6 +190,30 @@ void ssp1Send (uint8_t *buf, uint32_t length)
 
 /**************************************************************************/
 /*!
+    @brief Sends a data byte using SSP1
+
+    @param[in]  data
+                byte to send
+*/
+/**************************************************************************/
+void ssp1SendByte (uint8_t data)
+{
+  uint8_t Dummy = Dummy;
+
+  while ((LPC_SSP1->SR & (SSP1_SR_TNF_NOTFULL | SSP1_SR_BSY_BUSY)) != SSP1_SR_TNF_NOTFULL);
+  LPC_SSP1->DR = data;
+
+  while ( (LPC_SSP1->SR & (SSP1_SR_BSY_BUSY|SSP1_SR_RNE_NOTEMPTY)) != SSP1_SR_RNE_NOTEMPTY );
+  /* Whenever a byte is written, MISO FIFO counter increments, Clear FIFO
+  on MISO. Otherwise, when sspReceive is called, previous data byte
+  is left in the FIFO. */
+  Dummy = LPC_SSP1->DR;
+
+  return;
+}
+
+/**************************************************************************/
+/*!
     @brief Receives a block of data using SSP1
 
     @param[in]  buf
