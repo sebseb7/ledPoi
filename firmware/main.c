@@ -1,6 +1,5 @@
 #include "main.h"
 
-#include "leds.h"
 /*
 
 	data sheet  : http://www.nxp.com/documents/data_sheet/LPC1315_16_17_45_46_47.pdf
