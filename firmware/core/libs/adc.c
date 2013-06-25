@@ -47,7 +47,7 @@ volatile uint32_t channel_flag = 0;
 void ADC_IRQHandler (void) 
 {
   uint32_t regVal;
-  volatile uint32_t dummy;
+  volatile uint32_t dummy __attribute__((unused));
   int i;
   
   regVal = LPC_ADC->STAT;		/* Read ADC will clear the interrupt */

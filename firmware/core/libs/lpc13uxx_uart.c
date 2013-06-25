@@ -276,7 +276,7 @@ void UARTInit(uint32_t baudrate)
 #if !AUTOBAUD_ENABLE
   uint32_t Fdiv;
 #endif
-  volatile uint32_t regVal;
+  volatile uint32_t regVal __attribute__((unused));
 
   UARTTxEmpty = 1;
   UARTCount = 0;
