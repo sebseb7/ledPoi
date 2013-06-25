@@ -5,35 +5,21 @@ static uint8_t tick(uint32_t lap, uint32_t angle, struct segment_t *segment)
 {
 
 
-	uint8_t green = 180 - ((angle + lap) % 180);
-	uint8_t red = (angle - lap + 1440) % 180;;
-
-	segment->color[0].red = red;
-	segment->color[1].red = red;
-	segment->color[2].red = red;
-	segment->color[3].red = red;
-	segment->color[4].red = 0;
-	segment->color[5].red = 0;
-	segment->color[6].red = 0;
-	segment->color[7].red = 0;
+	uint8_t green = 180 - ((angle + (lap*10)) % 180);
+	uint8_t red = (angle - (lap*10) + 1440) % 180;;
 	
-	segment->color[0].green = 0;
-	segment->color[1].green = 0;
-	segment->color[2].green = 0;
-	segment->color[3].green = 0;
-	segment->color[4].green = green;
-	segment->color[5].green = green;
-	segment->color[6].green = green;
-	segment->color[7].green = green;
-	
-	segment->color[0].blue = 0;
-	segment->color[1].blue = 0;
-	segment->color[2].blue = 0;
-	segment->color[3].blue = 0;
-	segment->color[4].blue = 0;
-	segment->color[5].blue = 0;
-	segment->color[6].blue = 0;
-	segment->color[7].blue = 0;
+	for(uint8_t x = 0; x < LED_WIDTH/2;x++)
+	{
+		segment->color[x].red = red;
+		segment->color[x].green = 0;
+		segment->color[x].blue = 0;
+	}
+	for(uint8_t x = LED_WIDTH/2; x < LED_WIDTH;x++)
+	{
+		segment->color[x].red = 0;
+		segment->color[x].green = green;
+		segment->color[x].blue = 0;
+	}
 
 	return 0;
 }
@@ -49,7 +35,7 @@ static void deinit(void)
 
 static void constructor(void) CONSTRUCTOR_ATTRIBUTES
 void constructor(void) {
-	registerAnimation(init,tick,deinit, 305, 10000,0);
+	registerAnimation(init,tick,deinit, 20,0);
 }
 
 
