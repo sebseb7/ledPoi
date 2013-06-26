@@ -3,3 +3,5 @@
 *.bin
 *.elf
 firmware/tools/lpcrc/lpcrc
+sim/*
+!sim/*.*
