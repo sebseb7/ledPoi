@@ -5,3 +5,5 @@
 firmware/tools/lpcrc/lpcrc
 sim/*
 !sim/*.*
+!sim/Makefile
+
