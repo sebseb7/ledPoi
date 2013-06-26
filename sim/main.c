@@ -23,8 +23,7 @@ struct animation {
 	init_fun init_fp;
 	tick_fun tick_fp;
 	deinit_fun deinit_fp;
-	int duration;
-	uint32_t timing;
+	uint duration;
 	uint32_t idle;
 } animations[MAX_ANIMATIONS];
 
@@ -35,7 +34,7 @@ SDL_Surface* screen;
 
 
 
-void registerAnimation(init_fun init,tick_fun tick, deinit_fun deinit,uint16_t t, uint16_t count, uint8_t idle)
+void registerAnimation(init_fun init,tick_fun tick, deinit_fun deinit, uint16_t count, uint8_t idle)
 {
 	if(animationcount == MAX_ANIMATIONS)
 		return;
@@ -44,7 +43,6 @@ void registerAnimation(init_fun init,tick_fun tick, deinit_fun deinit,uint16_t t
 	animations[animationcount].deinit_fp = deinit;
 	animations[animationcount].duration = count;
 	animations[animationcount].idle = idle;
-	animations[animationcount].timing = 1000/t;
 
 	animationcount++;
 
@@ -66,10 +64,7 @@ int main(int argc __attribute__((__unused__)), char *argv[] __attribute__((__unu
 
 	animations[current_animation].init_fp();
 	
-	int tick_count = 0;
 	int running = 1;
-	//unsigned long long int startTime = get_clock();
-	Uint32 lastFrame = SDL_GetTicks(); 
 
 	uint32_t lap = 0;
 
@@ -132,19 +127,8 @@ int main(int argc __attribute__((__unused__)), char *argv[] __attribute__((__unu
 		SDL_Flip(screen);
 
 
-		Uint32 now = SDL_GetTicks() - lastFrame; 
 
-		if( now < animations[current_animation].timing )
-		{
-			//SDL_Delay(animations[current_animation].timing - now);
-		}
-		lastFrame = SDL_GetTicks();
-
-		
-		tick_count++;
-
-
-		if(tick_count == animations[current_animation].duration)
+		if(lap == animations[current_animation].duration)
 		{
 			animations[current_animation].deinit_fp();
 
@@ -153,7 +137,8 @@ int main(int argc __attribute__((__unused__)), char *argv[] __attribute__((__unu
 			{
 				current_animation = 0;
 			}
-			tick_count=0;
+			lap=0;
+
 
 			SDL_Rect rect = { 0, 0, RADIUS*2,RADIUS*2 };
 			SDL_FillRect(
