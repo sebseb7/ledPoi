@@ -36,6 +36,12 @@ void leds_flush(void)
 		ssp1SendByte (0x80 | color_correction[leds[x][0]] );
 		ssp1SendByte (0x80 | color_correction[leds[x][2]] );
 	}
+	for(int x= LED_WIDTH-1;x >= 0;x--)
+	{
+		ssp1SendByte (0x80 | color_correction[leds[x][1]] );
+		ssp1SendByte (0x80 | color_correction[leds[x][0]] );
+		ssp1SendByte (0x80 | color_correction[leds[x][2]] );
+	}
 	ssp1SendByte(0);
 }
 
