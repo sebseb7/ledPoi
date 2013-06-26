@@ -3,8 +3,6 @@
 
 static uint8_t tick(uint32_t lap, uint32_t angle, struct segment_t *segment) 
 {
-
-
 	uint8_t green = 180 - ((angle + (lap*10)) % 180);
 	uint8_t red = (angle - (lap*10) + 1440) % 180;;
 	
