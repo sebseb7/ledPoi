@@ -866,11 +866,11 @@ design rules under a new name.</description>
 <attribute name="NAME" x="12.1" y="-8.5" size="0.8128" layer="25" font="vector" ratio="10" rot="R180"/>
 </element>
 <element name="L2" library="seb" package="PIS2408" value="20µH/xxx mA" x="13" y="19.2" smashed="yes" rot="R270"/>
-<element name="R6" library="rcl" package="R0402" value="15k" x="10.4" y="23.8" smashed="yes" rot="R180">
+<element name="R6" library="rcl" package="R0402" value="680k" x="10.4" y="23.8" smashed="yes" rot="R180">
 <attribute name="NAME" x="10.565" y="24.635" size="0.8128" layer="25" font="vector" ratio="10"/>
 <attribute name="VALUE" x="11.035" y="25.705" size="1.27" layer="27" rot="R180"/>
 </element>
-<element name="R7" library="rcl" package="R0402" value="15k" x="8" y="23.8" smashed="yes">
+<element name="R7" library="rcl" package="R0402" value="220k" x="8" y="23.8" smashed="yes">
 <attribute name="NAME" x="7.165" y="22.235" size="0.8128" layer="25" font="vector" ratio="10"/>
 <attribute name="VALUE" x="7.365" y="21.895" size="1.27" layer="27"/>
 </element>

@@ -21036,8 +21036,8 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="MOSI" library="wirepad" deviceset="SMD5" device=""/>
 <part name="SCK" library="wirepad" deviceset="SMD5" device=""/>
 <part name="L2" library="seb" deviceset="PIS2408" device="" value="20µH/xxx mA"/>
-<part name="R6" library="rcl" deviceset="R-EU_" device="R0402" value="15k"/>
-<part name="R7" library="rcl" deviceset="R-EU_" device="R0402" value="15k"/>
+<part name="R6" library="rcl" deviceset="R-EU_" device="R0402" value="680k"/>
+<part name="R7" library="rcl" deviceset="R-EU_" device="R0402" value="220k"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="P+5" library="supply1" deviceset="+12V" device=""/>
 <part name="P+6" library="supply1" deviceset="+12V" device=""/>
