@@ -23,6 +23,27 @@ SECTIONS {
 		*(.rodata*)
 		_end_text = .;
 	} >flash
+	
+	.preinit_array     :
+	{
+		PROVIDE_HIDDEN (__preinit_array_start = .);
+		KEEP (*(.preinit_array*))
+		PROVIDE_HIDDEN (__preinit_array_end = .);
+	} >flash
+	.init_array :
+	{
+		PROVIDE_HIDDEN (__init_array_start = .);
+		KEEP (*(SORT(.init_array.*)))
+		KEEP (*(.init_array*))
+		PROVIDE_HIDDEN (__init_array_end = .);
+	} >flash
+	.fini_array :
+	{
+		PROVIDE_HIDDEN (__fini_array_start = .);
+		KEEP (*(.fini_array*))
+		KEEP (*(SORT(.fini_array.*)))
+		PROVIDE_HIDDEN (__fini_array_end = .);
+	} >flash
 
 	.data : 
 	{
@@ -33,9 +54,11 @@ SECTIONS {
 
 	.bss :
 	{
+		__bss_start__ = .;
 		_start_bss = .;
 		*(.bss)
 		_end_bss = .;
+		__bss_end__ = .;
 	} >sram
 
 	. = ALIGN(4);

@@ -6,6 +6,7 @@ extern unsigned int _start_data;
 extern unsigned int _end_data;
 extern unsigned int _start_bss;
 extern unsigned int _end_bss;
+extern void __libc_init_array (void);
 
 extern int main(void);
 extern void SystemInit(void);
@@ -121,6 +122,9 @@ void Reset_Handler(void) {
 		*dst++ = 0;
 
 	SystemInit();
+	
+	__libc_init_array();
+	
 	main();
 }	
 
