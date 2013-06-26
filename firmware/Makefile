@@ -6,7 +6,10 @@ OPTIMIZATION = 1
 
 #########################################################################
 
-SRC=$(wildcard core/*.c)  $(wildcard core/libs/*.c) $(wildcard *.c)
+SRC=$(wildcard core/*.c)  $(wildcard core/libs/*.c) $(wildcard *.c) \
+	../animations/4colors.c \
+	../animations/counter_fade_wheel.c
+
 
 
 OBJECTS= $(SRC:.c=.o) 
@@ -23,8 +26,7 @@ GCFLAGS += -fsingle-precision-constant -funsigned-char -funsigned-bitfields -fsh
 # Debug stuff
 #GCFLAGS += -Wa,-adhlns=$(<:.c=.lst),-gstabs -g 
 
-LDFLAGS =  -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -nostartfiles  -T$(LDCRIPT) 
-
+LDFLAGS =  -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -T$(LDCRIPT)  
 
 #  Compiler/Linker Paths
 GCC = arm-none-eabi-gcc
@@ -42,7 +44,8 @@ tools/lpcrc/lpcrc:
 firmware.bin: $(PROJECT).elf Makefile
 	$(OBJCOPY) -R .stack -O binary $(PROJECT).elf firmware.bin
 	tools/lpcrc/lpcrc firmware.bin
-$(PROJECT).elf: $(OBJECTS) Makefile
+
+$(PROJECT).elf: $(OBJECTS) Makefile $(LDCRIPT)
 	@echo "  \033[1;34mLD \033[0m (\033[1;33m $(OBJECTS)\033[0m) -> $(PROJECT).elf"
 	@$(GCC) $(LDFLAGS) $(OBJECTS) -o $(PROJECT).elf -lm
 	arm-none-eabi-strip -s $(PROJECT).elf

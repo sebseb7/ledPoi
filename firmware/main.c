@@ -19,16 +19,46 @@ void SysTick_Handler(void) {
 	msTicks++;
 }
 
+
 void delay_ms(uint32_t ms) {
 	uint32_t now = msTicks;
+	while ((msTicks-now) < ms*10);
+}
+void delay_100ns(uint32_t ms) {
+	uint32_t now = msTicks;
 	while ((msTicks-now) < ms);
+}
+
+#define MAX_ANIMATIONS 200
+int animationcount = 0;
+
+struct animation {
+	init_fun init_fp;
+	tick_fun tick_fp;
+	deinit_fun deinit_fp;
+	uint32_t duration;
+	uint32_t idle;
+} animations[MAX_ANIMATIONS];
+
+
+void registerAnimation(init_fun init,tick_fun tick, deinit_fun deinit,uint16_t count, uint8_t idle)
+{
+	if(animationcount == MAX_ANIMATIONS)
+		return;
+	animations[animationcount].init_fp = init;
+	animations[animationcount].tick_fp = tick;
+	animations[animationcount].deinit_fp = deinit;
+	animations[animationcount].duration = count;
+	animations[animationcount].idle = idle;
+
+	animationcount++;
 }
 
 int main(void) {
 
 
 	SystemCoreClockUpdate();
-	SysTick_Config(SystemCoreClock/1000);
+	SysTick_Config(SystemCoreClock/10000);
 
 	// clock to GPIO
 	LPC_SYSCON->SYSAHBCLKCTRL |= (1<<6);
@@ -45,17 +75,54 @@ int main(void) {
 	leds_init();
 
 	// green red blue
-
+	
+	
+	int current_animation = 0;
+	animations[current_animation].init_fp();
+	
+	uint32_t lap = 0;
+	uint32_t angle = 0 ; 
+	
 	while(1)
 	{
-		setLedX(0,30,0,0);setLedX(1,30,0,0);setLedX(2,30,0,0);setLedX(3,30,0,0);leds_flush();delay_ms(140);
-		setLedX(0,0,30,0);setLedX(1,30,0,0);setLedX(2,30,0,0);setLedX(3,30,0,0);leds_flush();delay_ms(140);
-		setLedX(0,0,30,0);setLedX(1,0,30,0);setLedX(2,30,0,0);setLedX(3,30,0,0);leds_flush();delay_ms(140);
-		setLedX(0,0,30,0);setLedX(1,0,30,0);setLedX(2,0,30,0);setLedX(3,30,0,0);leds_flush();delay_ms(140);
-		setLedX(0,0,30,0);setLedX(1,0,30,0);setLedX(2,0,30,0);setLedX(3,0,30,0);leds_flush();delay_ms(140);
-		setLedX(0,30,0,0);setLedX(1,0,30,0);setLedX(2,0,30,0);setLedX(3,0,30,0);leds_flush();delay_ms(140);
-		setLedX(0,30,0,0);setLedX(1,30,0,0);setLedX(2,0,30,0);setLedX(3,0,30,0);leds_flush();delay_ms(140);
-		setLedX(0,30,0,0);setLedX(1,30,0,0);setLedX(2,30,0,0);setLedX(3,0,30,0);leds_flush();delay_ms(140);
+		
+		struct segment_t segment;
+
+		animations[current_animation].tick_fp(lap,angle,&segment);
+			
+		for(int x = 0; x < LED_WIDTH; x++) 
+		{
+			setLedX(x,segment.color[x].red,segment.color[x].green,segment.color[x].blue);
+		}
+		leds_flush();
+
+		delay_100ns(2);
+
+		angle++;
+		if(angle == 360*4)
+		{
+			angle=0;
+			lap++;
+		}
+
+
+		if(lap == animations[current_animation].duration)
+		{
+			animations[current_animation].deinit_fp();
+
+			current_animation++;
+			if(current_animation == animationcount)
+			{
+				current_animation = 0;
+			}
+
+			lap=0;
+			angle=0;
+
+			animations[current_animation].init_fp();
+
+		}
+
 	}
 }
 
