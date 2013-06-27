@@ -8437,9 +8437,15 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 <packages>
 <package name="SMD2,54-5,08">
 <description>&lt;b&gt;SMD PAD&lt;/b&gt;</description>
-<smd name="1" x="0" y="0" dx="2.54" dy="5.08" layer="1" cream="no"/>
+<smd name="1" x="0" y="0" dx="2.54" dy="5.08" layer="1"/>
 <text x="0" y="0" size="0.0254" layer="27">&gt;VALUE</text>
 <text x="-1.5" y="-2.5" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+</package>
+<package name="SMD1,27-2,54">
+<description>&lt;b&gt;SMD PAD&lt;/b&gt;</description>
+<smd name="1" x="0" y="0" dx="1.27" dy="2.54" layer="1"/>
+<text x="0" y="0" size="0.0254" layer="27">&gt;VALUE</text>
+<text x="-0.8" y="-2.4" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 </package>
 </packages>
 <symbols>
@@ -8459,6 +8465,22 @@ Source: http://www.diodes.com/datasheets/ds23001.pdf</description>
 </gates>
 <devices>
 <device name="" package="SMD2,54-5,08">
+<connects>
+<connect gate="1" pin="P" pad="1"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SMD2" prefix="PAD" uservalue="yes">
+<description>&lt;b&gt;SMD PAD&lt;/b&gt;</description>
+<gates>
+<gate name="1" symbol="PAD" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="SMD1,27-2,54">
 <connects>
 <connect gate="1" pin="P" pad="1"/>
 </connects>
@@ -8799,6 +8821,445 @@ package type OT</description>
 <text x="-2.286" y="-1.651" size="0.8128" layer="27" font="vector">&gt;VALUE</text>
 <rectangle x1="-0.3175" y1="-0.635" x2="-0.0635" y2="0.635" layer="21"/>
 </package>
+<package name="MAKE-DD_LOGO">
+<polygon width="0" layer="21">
+<vertex x="0.31" y="0.57"/>
+<vertex x="0.31" y="1.56"/>
+<vertex x="1.56" y="1.56" curve="-90"/>
+<vertex x="1.76" y="1.36"/>
+<vertex x="1.76" y="0.57"/>
+<vertex x="1.51" y="0.57"/>
+<vertex x="1.51" y="1.31"/>
+<vertex x="1.16" y="1.31"/>
+<vertex x="1.16" y="0.57"/>
+<vertex x="0.91" y="0.57"/>
+<vertex x="0.91" y="1.31"/>
+<vertex x="0.56" y="1.31"/>
+<vertex x="0.56" y="0.57"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="2" y="1.56"/>
+<vertex x="2.8" y="1.56" curve="-90"/>
+<vertex x="3" y="1.36"/>
+<vertex x="3" y="0.58"/>
+<vertex x="2.75" y="0.58"/>
+<vertex x="2.75" y="0.97"/>
+<vertex x="2.26" y="0.97"/>
+<vertex x="2.26" y="0.82"/>
+<vertex x="2.75" y="0.82"/>
+<vertex x="2.75" y="0.58"/>
+<vertex x="2.15" y="0.58" curve="-90"/>
+<vertex x="2" y="0.73"/>
+<vertex x="2" y="1.19"/>
+<vertex x="2.75" y="1.19"/>
+<vertex x="2.75" y="1.32"/>
+<vertex x="2" y="1.32"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="3.2" y="0.58"/>
+<vertex x="3.2" y="1.89"/>
+<vertex x="3.45" y="1.89"/>
+<vertex x="3.45" y="1.2"/>
+<vertex x="3.61" y="1.2"/>
+<vertex x="3.94" y="1.56"/>
+<vertex x="4.19" y="1.56"/>
+<vertex x="4.19" y="1.47"/>
+<vertex x="3.82" y="1.07"/>
+<vertex x="4.19" y="0.67"/>
+<vertex x="4.19" y="0.57"/>
+<vertex x="3.94" y="0.57"/>
+<vertex x="3.59" y="0.94"/>
+<vertex x="3.45" y="0.94"/>
+<vertex x="3.45" y="0.58"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="5.32" y="0.58"/>
+<vertex x="4.47" y="0.58" curve="-90"/>
+<vertex x="4.32" y="0.73"/>
+<vertex x="4.32" y="1.17"/>
+<vertex x="5.07" y="1.17"/>
+<vertex x="5.07" y="1.32"/>
+<vertex x="4.57" y="1.32"/>
+<vertex x="4.57" y="1.17"/>
+<vertex x="4.32" y="1.17"/>
+<vertex x="4.32" y="1.39" curve="-90"/>
+<vertex x="4.49" y="1.56"/>
+<vertex x="5.13" y="1.56" curve="-90"/>
+<vertex x="5.32" y="1.37"/>
+<vertex x="5.32" y="0.95"/>
+<vertex x="4.57" y="0.95"/>
+<vertex x="4.57" y="0.82"/>
+<vertex x="5.32" y="0.82"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="5.45" y="0.95"/>
+<vertex x="5.45" y="1.2"/>
+<vertex x="6.16" y="1.2"/>
+<vertex x="6.16" y="0.95"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="7.29" y="0.58"/>
+<vertex x="6.45" y="0.58" curve="-90"/>
+<vertex x="6.29" y="0.74"/>
+<vertex x="6.29" y="1.37" curve="-90"/>
+<vertex x="6.48" y="1.56"/>
+<vertex x="7.03" y="1.56"/>
+<vertex x="7.03" y="1.88"/>
+<vertex x="7.29" y="1.88"/>
+<vertex x="7.29" y="1.31"/>
+<vertex x="6.54" y="1.31"/>
+<vertex x="6.54" y="0.83"/>
+<vertex x="7.03" y="0.83"/>
+<vertex x="7.03" y="1.31"/>
+<vertex x="7.29" y="1.31"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="8.45" y="0.58"/>
+<vertex x="7.61" y="0.58" curve="-90"/>
+<vertex x="7.45" y="0.74"/>
+<vertex x="7.45" y="1.37" curve="-90"/>
+<vertex x="7.64" y="1.56"/>
+<vertex x="8.19" y="1.56"/>
+<vertex x="8.19" y="1.88"/>
+<vertex x="8.45" y="1.88"/>
+<vertex x="8.45" y="1.31"/>
+<vertex x="7.7" y="1.31"/>
+<vertex x="7.7" y="0.83"/>
+<vertex x="8.19" y="0.83"/>
+<vertex x="8.19" y="1.31"/>
+<vertex x="8.45" y="1.31"/>
+</polygon>
+</package>
+<package name="MAKE-DD_LOGO_URL">
+<polygon width="0" layer="21">
+<vertex x="0" y="0"/>
+<vertex x="0" y="0.99"/>
+<vertex x="1.25" y="0.99" curve="-90"/>
+<vertex x="1.45" y="0.79"/>
+<vertex x="1.45" y="0"/>
+<vertex x="1.2" y="0"/>
+<vertex x="1.2" y="0.74"/>
+<vertex x="0.85" y="0.74"/>
+<vertex x="0.85" y="0"/>
+<vertex x="0.6" y="0"/>
+<vertex x="0.6" y="0.74"/>
+<vertex x="0.25" y="0.74"/>
+<vertex x="0.25" y="0"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="1.69" y="0.99"/>
+<vertex x="2.49" y="0.99" curve="-90"/>
+<vertex x="2.69" y="0.79"/>
+<vertex x="2.69" y="0.01"/>
+<vertex x="2.44" y="0.01"/>
+<vertex x="2.44" y="0.4"/>
+<vertex x="1.95" y="0.4"/>
+<vertex x="1.95" y="0.25"/>
+<vertex x="2.44" y="0.25"/>
+<vertex x="2.44" y="0.01"/>
+<vertex x="1.84" y="0.01" curve="-90"/>
+<vertex x="1.69" y="0.16"/>
+<vertex x="1.69" y="0.62"/>
+<vertex x="2.44" y="0.62"/>
+<vertex x="2.44" y="0.75"/>
+<vertex x="1.69" y="0.75"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="2.89" y="0.01"/>
+<vertex x="2.89" y="1.32"/>
+<vertex x="3.14" y="1.32"/>
+<vertex x="3.14" y="0.63"/>
+<vertex x="3.3" y="0.63"/>
+<vertex x="3.63" y="0.99"/>
+<vertex x="3.88" y="0.99"/>
+<vertex x="3.88" y="0.9"/>
+<vertex x="3.51" y="0.5"/>
+<vertex x="3.88" y="0.1"/>
+<vertex x="3.88" y="0"/>
+<vertex x="3.63" y="0"/>
+<vertex x="3.28" y="0.37"/>
+<vertex x="3.14" y="0.37"/>
+<vertex x="3.14" y="0.01"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="5.01" y="0.01"/>
+<vertex x="4.16" y="0.01" curve="-90"/>
+<vertex x="4.01" y="0.16"/>
+<vertex x="4.01" y="0.6"/>
+<vertex x="4.76" y="0.6"/>
+<vertex x="4.76" y="0.75"/>
+<vertex x="4.26" y="0.75"/>
+<vertex x="4.26" y="0.6"/>
+<vertex x="4.01" y="0.6"/>
+<vertex x="4.01" y="0.82" curve="-90"/>
+<vertex x="4.18" y="0.99"/>
+<vertex x="4.82" y="0.99" curve="-90"/>
+<vertex x="5.01" y="0.8"/>
+<vertex x="5.01" y="0.38"/>
+<vertex x="4.26" y="0.38"/>
+<vertex x="4.26" y="0.25"/>
+<vertex x="5.01" y="0.25"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="5.14" y="0.38"/>
+<vertex x="5.14" y="0.63"/>
+<vertex x="5.85" y="0.63"/>
+<vertex x="5.85" y="0.38"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="6.98" y="0.01"/>
+<vertex x="6.14" y="0.01" curve="-90"/>
+<vertex x="5.98" y="0.17"/>
+<vertex x="5.98" y="0.8" curve="-90"/>
+<vertex x="6.17" y="0.99"/>
+<vertex x="6.72" y="0.99"/>
+<vertex x="6.72" y="1.31"/>
+<vertex x="6.98" y="1.31"/>
+<vertex x="6.98" y="0.74"/>
+<vertex x="6.23" y="0.74"/>
+<vertex x="6.23" y="0.26"/>
+<vertex x="6.72" y="0.26"/>
+<vertex x="6.72" y="0.74"/>
+<vertex x="6.98" y="0.74"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="8.14" y="0.01"/>
+<vertex x="7.3" y="0.01" curve="-90"/>
+<vertex x="7.14" y="0.17"/>
+<vertex x="7.14" y="0.8" curve="-90"/>
+<vertex x="7.33" y="0.99"/>
+<vertex x="7.88" y="0.99"/>
+<vertex x="7.88" y="1.31"/>
+<vertex x="8.14" y="1.31"/>
+<vertex x="8.14" y="0.74"/>
+<vertex x="7.39" y="0.74"/>
+<vertex x="7.39" y="0.26"/>
+<vertex x="7.88" y="0.26"/>
+<vertex x="7.88" y="0.74"/>
+<vertex x="8.14" y="0.74"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="8.27" y="0.01"/>
+<vertex x="8.27" y="0.26"/>
+<vertex x="8.52" y="0.26"/>
+<vertex x="8.52" y="0.01"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="9.65" y="0.01"/>
+<vertex x="8.81" y="0.01" curve="-90"/>
+<vertex x="8.65" y="0.17"/>
+<vertex x="8.65" y="0.8" curve="-90"/>
+<vertex x="8.84" y="0.99"/>
+<vertex x="9.39" y="0.99"/>
+<vertex x="9.39" y="1.31"/>
+<vertex x="9.65" y="1.31"/>
+<vertex x="9.65" y="0.74"/>
+<vertex x="8.9" y="0.74"/>
+<vertex x="8.9" y="0.26"/>
+<vertex x="9.39" y="0.26"/>
+<vertex x="9.39" y="0.74"/>
+<vertex x="9.65" y="0.74"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="10.81" y="0.01"/>
+<vertex x="9.96" y="0.01" curve="-90"/>
+<vertex x="9.81" y="0.16"/>
+<vertex x="9.81" y="0.6"/>
+<vertex x="10.56" y="0.6"/>
+<vertex x="10.56" y="0.75"/>
+<vertex x="10.06" y="0.75"/>
+<vertex x="10.06" y="0.6"/>
+<vertex x="9.81" y="0.6"/>
+<vertex x="9.81" y="0.82" curve="-90"/>
+<vertex x="9.98" y="0.99"/>
+<vertex x="10.62" y="0.99" curve="-90"/>
+<vertex x="10.81" y="0.8"/>
+<vertex x="10.81" y="0.38"/>
+<vertex x="10.06" y="0.38"/>
+<vertex x="10.06" y="0.25"/>
+<vertex x="10.81" y="0.25"/>
+</polygon>
+</package>
+<package name="MAKE-DD_LOGO_PROMPT">
+<polygon width="0" layer="21">
+<vertex x="2.095" y="0"/>
+<vertex x="2.095" y="0.99"/>
+<vertex x="3.345" y="0.99" curve="-90"/>
+<vertex x="3.545" y="0.79"/>
+<vertex x="3.545" y="0"/>
+<vertex x="3.295" y="0"/>
+<vertex x="3.295" y="0.74"/>
+<vertex x="2.945" y="0.74"/>
+<vertex x="2.945" y="0"/>
+<vertex x="2.695" y="0"/>
+<vertex x="2.695" y="0.74"/>
+<vertex x="2.345" y="0.74"/>
+<vertex x="2.345" y="0"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="3.785" y="0.99"/>
+<vertex x="4.585" y="0.99" curve="-90"/>
+<vertex x="4.785" y="0.79"/>
+<vertex x="4.785" y="0.01"/>
+<vertex x="4.535" y="0.01"/>
+<vertex x="4.535" y="0.4"/>
+<vertex x="4.045" y="0.4"/>
+<vertex x="4.045" y="0.25"/>
+<vertex x="4.535" y="0.25"/>
+<vertex x="4.535" y="0.01"/>
+<vertex x="3.935" y="0.01" curve="-90"/>
+<vertex x="3.785" y="0.16"/>
+<vertex x="3.785" y="0.62"/>
+<vertex x="4.535" y="0.62"/>
+<vertex x="4.535" y="0.75"/>
+<vertex x="3.785" y="0.75"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="4.985" y="0.01"/>
+<vertex x="4.985" y="1.32"/>
+<vertex x="5.235" y="1.32"/>
+<vertex x="5.235" y="0.63"/>
+<vertex x="5.395" y="0.63"/>
+<vertex x="5.725" y="0.99"/>
+<vertex x="5.975" y="0.99"/>
+<vertex x="5.975" y="0.9"/>
+<vertex x="5.605" y="0.5"/>
+<vertex x="5.975" y="0.1"/>
+<vertex x="5.975" y="0"/>
+<vertex x="5.725" y="0"/>
+<vertex x="5.375" y="0.37"/>
+<vertex x="5.235" y="0.37"/>
+<vertex x="5.235" y="0.01"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="7.105" y="0.01"/>
+<vertex x="6.255" y="0.01" curve="-90"/>
+<vertex x="6.105" y="0.16"/>
+<vertex x="6.105" y="0.6"/>
+<vertex x="6.855" y="0.6"/>
+<vertex x="6.855" y="0.75"/>
+<vertex x="6.355" y="0.75"/>
+<vertex x="6.355" y="0.6"/>
+<vertex x="6.105" y="0.6"/>
+<vertex x="6.105" y="0.82" curve="-90"/>
+<vertex x="6.275" y="0.99"/>
+<vertex x="6.915" y="0.99" curve="-90"/>
+<vertex x="7.105" y="0.8"/>
+<vertex x="7.105" y="0.38"/>
+<vertex x="6.355" y="0.38"/>
+<vertex x="6.355" y="0.25"/>
+<vertex x="7.105" y="0.25"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="7.854" y="0.38"/>
+<vertex x="7.854" y="0.63"/>
+<vertex x="8.564" y="0.63"/>
+<vertex x="8.564" y="0.38"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="9.694" y="0.01"/>
+<vertex x="8.854" y="0.01" curve="-90"/>
+<vertex x="8.694" y="0.17"/>
+<vertex x="8.694" y="0.8" curve="-90"/>
+<vertex x="8.884" y="0.99"/>
+<vertex x="9.434" y="0.99"/>
+<vertex x="9.434" y="1.31"/>
+<vertex x="9.694" y="1.31"/>
+<vertex x="9.694" y="0.74"/>
+<vertex x="8.944" y="0.74"/>
+<vertex x="8.944" y="0.26"/>
+<vertex x="9.434" y="0.26"/>
+<vertex x="9.434" y="0.74"/>
+<vertex x="9.694" y="0.74"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="10.854" y="0.01"/>
+<vertex x="10.014" y="0.01" curve="-90"/>
+<vertex x="9.854" y="0.17"/>
+<vertex x="9.854" y="0.8" curve="-90"/>
+<vertex x="10.044" y="0.99"/>
+<vertex x="10.594" y="0.99"/>
+<vertex x="10.594" y="1.31"/>
+<vertex x="10.854" y="1.31"/>
+<vertex x="10.854" y="0.74"/>
+<vertex x="10.104" y="0.74"/>
+<vertex x="10.104" y="0.26"/>
+<vertex x="10.594" y="0.26"/>
+<vertex x="10.594" y="0.74"/>
+<vertex x="10.854" y="0.74"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="-0.156" y="0.398"/>
+<vertex x="-0.156" y="0.606"/>
+<vertex x="-0.104" y="0.632"/>
+<vertex x="-0.065" y="0.645"/>
+<vertex x="0.052" y="0.645"/>
+<vertex x="0.156" y="0.619"/>
+<vertex x="0.208" y="0.593"/>
+<vertex x="0.273" y="0.554"/>
+<vertex x="0.325" y="0.541"/>
+<vertex x="0.377" y="0.541"/>
+<vertex x="0.403" y="0.554"/>
+<vertex x="0.481" y="0.606"/>
+<vertex x="0.481" y="0.398"/>
+<vertex x="0.416" y="0.372"/>
+<vertex x="0.364" y="0.359"/>
+<vertex x="0.299" y="0.359"/>
+<vertex x="0.234" y="0.372"/>
+<vertex x="0.182" y="0.385"/>
+<vertex x="0.13" y="0.424"/>
+<vertex x="0.065" y="0.45"/>
+<vertex x="0.026" y="0.463"/>
+<vertex x="-0.039" y="0.463"/>
+<vertex x="-0.117" y="0.424"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="1.383" y="-0.169"/>
+<vertex x="1.123" y="-0.169"/>
+<vertex x="1.123" y="0"/>
+<vertex x="0.837" y="0" curve="-90"/>
+<vertex x="0.655" y="0.182"/>
+<vertex x="0.655" y="0.351"/>
+<vertex x="0.902" y="0.351"/>
+<vertex x="0.902" y="0.247"/>
+<vertex x="1.604" y="0.247"/>
+<vertex x="1.604" y="0.481"/>
+<vertex x="1.383" y="0.481"/>
+<vertex x="1.383" y="0.247"/>
+<vertex x="1.123" y="0.247"/>
+<vertex x="1.123" y="0.481"/>
+<vertex x="0.876" y="0.481" curve="-90"/>
+<vertex x="0.655" y="0.702"/>
+<vertex x="0.655" y="1.053" curve="-90"/>
+<vertex x="0.837" y="1.235"/>
+<vertex x="1.123" y="1.235"/>
+<vertex x="1.123" y="1.404"/>
+<vertex x="1.383" y="1.404"/>
+<vertex x="1.383" y="1.235"/>
+<vertex x="1.682" y="1.235" curve="-90"/>
+<vertex x="1.851" y="1.066"/>
+<vertex x="1.851" y="0.884"/>
+<vertex x="1.604" y="0.884"/>
+<vertex x="1.604" y="0.988"/>
+<vertex x="0.902" y="0.988"/>
+<vertex x="0.902" y="0.728"/>
+<vertex x="1.123" y="0.728"/>
+<vertex x="1.123" y="0.988"/>
+<vertex x="1.383" y="0.988"/>
+<vertex x="1.383" y="0.728"/>
+<vertex x="1.695" y="0.728" curve="-90"/>
+<vertex x="1.851" y="0.572"/>
+<vertex x="1.851" y="0.182" curve="-90"/>
+<vertex x="1.669" y="0"/>
+<vertex x="1.383" y="0"/>
+</polygon>
+<polygon width="0" layer="21">
+<vertex x="10.979" y="-0.31"/>
+<vertex x="10.979" y="-0.06"/>
+<vertex x="12.129" y="-0.06"/>
+<vertex x="12.129" y="-0.31"/>
+</polygon>
+</package>
 </packages>
 <symbols>
 <symbol name="SWITCH">
@@ -8861,6 +9322,26 @@ package type OT</description>
 <text x="-2.5654" y="-4.4958" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="A" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
 <pin name="C" x="2.54" y="0" visible="off" length="short" direction="pas" rot="R180"/>
+</symbol>
+<symbol name="MAKE-DD_LOGO">
+<rectangle x1="1.6" y1="4.4" x2="3.6" y2="6" layer="94"/>
+<rectangle x1="5.2" y1="4.4" x2="7.2" y2="6" layer="94"/>
+<polygon width="0.2" layer="93">
+<vertex x="0.1" y="0.1"/>
+<vertex x="0.1" y="5.9"/>
+<vertex x="7.6" y="5.9"/>
+<vertex x="7.7" y="5.9" curve="-90"/>
+<vertex x="8.7" y="4.9"/>
+<vertex x="8.7" y="0.1"/>
+<vertex x="7.3" y="0.1"/>
+<vertex x="7.3" y="4.5"/>
+<vertex x="5.1" y="4.5"/>
+<vertex x="5.1" y="0.1"/>
+<vertex x="3.7" y="0.1"/>
+<vertex x="3.7" y="4.5"/>
+<vertex x="1.5" y="4.5"/>
+<vertex x="1.5" y="0.1"/>
+</polygon>
 </symbol>
 </symbols>
 <devicesets>
@@ -8941,6 +9422,28 @@ package type OT</description>
 <connect gate="G$1" pin="A" pad="2"/>
 <connect gate="G$1" pin="C" pad="1"/>
 </connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MAKE-DD_LOGO">
+<gates>
+<gate name="G$1" symbol="MAKE-DD_LOGO" x="0" y="0"/>
+</gates>
+<devices>
+<device name="'REGULAR'" package="MAKE-DD_LOGO">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'URL'" package="MAKE-DD_LOGO_URL">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+<device name="'PROMPT'" package="MAKE-DD_LOGO_PROMPT">
 <technologies>
 <technology name=""/>
 </technologies>
@@ -21002,7 +21505,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="R4" library="rcl" deviceset="R-EU_" device="R0402" value="33R"/>
 <part name="R5" library="rcl" deviceset="R-EU_" device="R0402" value="33R"/>
 <part name="RST" library="seb" deviceset="SWITCH_MCTAEF" device=""/>
-<part name="BL/SW2" library="seb" deviceset="SWITCH_MCTAEF" device=""/>
+<part name="BL" library="seb" deviceset="SWITCH_MCTAEF" device=""/>
 <part name="C3" library="rcl" deviceset="C-EU" device="C0402" value="22pF"/>
 <part name="C2" library="rcl" deviceset="C-EU" device="C0402" value="22pF"/>
 <part name="C4" library="rcl" deviceset="C-EU" device="C0402" value="100nF"/>
@@ -21043,6 +21546,17 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="P+6" library="supply1" deviceset="+12V" device=""/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="D1" library="seb" deviceset="DIODE_0805" device="" value="4148"/>
+<part name="C13" library="SparkFun-Capacitors" deviceset="CAP" device="0805" value="1µF"/>
+<part name="GND9" library="supply1" deviceset="GND" device=""/>
+<part name="U$1" library="seb" deviceset="MAKE-DD_LOGO" device="'PROMPT'"/>
+<part name="GN" library="wirepad" deviceset="SMD2" device=""/>
+<part name="3V3" library="wirepad" deviceset="SMD2" device=""/>
+<part name="SCL" library="wirepad" deviceset="SMD2" device=""/>
+<part name="SDA" library="wirepad" deviceset="SMD2" device=""/>
+<part name="GND13" library="supply1" deviceset="GND" device=""/>
+<part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
+<part name="R12" library="rcl" deviceset="R-EU_" device="R0402" value="15k"/>
+<part name="R13" library="rcl" deviceset="R-EU_" device="R0402" value="15k"/>
 </parts>
 <sheets>
 <sheet>
@@ -21219,7 +21733,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="RST" gate="G$1" x="274.32" y="20.32" smashed="yes">
 <attribute name="NAME" x="259.715" y="21.59" size="1.778" layer="95"/>
 </instance>
-<instance part="BL/SW2" gate="G$1" x="274.32" y="25.4" smashed="yes"/>
+<instance part="BL" gate="G$1" x="274.32" y="25.4" smashed="yes"/>
 <instance part="C3" gate="G$1" x="27.94" y="83.82" rot="R90"/>
 <instance part="C2" gate="G$1" x="27.94" y="88.9" rot="R90"/>
 <instance part="C4" gate="G$1" x="33.02" y="119.38" rot="R180"/>
@@ -21252,6 +21766,17 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="GND6" gate="1" x="83.82" y="104.14"/>
 <instance part="P+6" gate="1" x="83.82" y="132.08"/>
 <instance part="GND7" gate="1" x="43.18" y="162.56"/>
+<instance part="C13" gate="G$1" x="93.98" y="109.22"/>
+<instance part="GND9" gate="1" x="93.98" y="104.14"/>
+<instance part="U$1" gate="G$1" x="274.32" y="-35.56"/>
+<instance part="GN" gate="1" x="132.08" y="160.02" rot="R180"/>
+<instance part="3V3" gate="1" x="132.08" y="152.4" rot="R180"/>
+<instance part="SCL" gate="1" x="132.08" y="144.78" rot="R180"/>
+<instance part="SDA" gate="1" x="132.08" y="137.16" rot="R180"/>
+<instance part="GND13" gate="1" x="114.3" y="160.02" rot="R270"/>
+<instance part="+3V6" gate="G$1" x="86.36" y="152.4" rot="R90"/>
+<instance part="R12" gate="G$1" x="99.06" y="137.16"/>
+<instance part="R13" gate="G$1" x="99.06" y="144.78"/>
 </instances>
 <busses>
 </busses>
@@ -21312,7 +21837,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <segment>
 <wire x1="259.08" y1="25.4" x2="269.24" y2="25.4" width="0.1524" layer="91"/>
 <pinref part="GND8" gate="1" pin="GND"/>
-<pinref part="BL/SW2" gate="G$1" pin="1"/>
+<pinref part="BL" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="R8" gate="G$1" pin="1"/>
@@ -21351,6 +21876,15 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <junction x="68.58" y="165.1"/>
 <pinref part="GND7" gate="1" pin="GND"/>
 <junction x="43.18" y="165.1"/>
+</segment>
+<segment>
+<pinref part="C13" gate="G$1" pin="2"/>
+<pinref part="GND9" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="GN" gate="1" pin="P"/>
+<wire x1="129.54" y1="160.02" x2="116.84" y2="160.02" width="0.1524" layer="91"/>
+<pinref part="GND13" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="+3V3" class="0">
@@ -21396,6 +21930,21 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <wire x1="104.14" y1="182.88" x2="104.14" y2="187.96" width="0.1524" layer="91"/>
 <junction x="104.14" y="182.88"/>
 </segment>
+<segment>
+<pinref part="3V3" gate="1" pin="P"/>
+<wire x1="129.54" y1="152.4" x2="93.98" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="+3V6" gate="G$1" pin="+3V3"/>
+<wire x1="93.98" y1="152.4" x2="88.9" y2="152.4" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="144.78" x2="93.98" y2="144.78" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="144.78" x2="93.98" y2="152.4" width="0.1524" layer="91"/>
+<junction x="93.98" y="152.4"/>
+<wire x1="96.52" y1="137.16" x2="93.98" y2="137.16" width="0.1524" layer="91"/>
+<wire x1="93.98" y1="137.16" x2="93.98" y2="144.78" width="0.1524" layer="91"/>
+<junction x="93.98" y="144.78"/>
+<pinref part="R12" gate="G$1" pin="1"/>
+<junction x="93.98" y="137.16"/>
+<pinref part="R13" gate="G$1" pin="1"/>
+</segment>
 </net>
 <net name="RST" class="0">
 <segment>
@@ -21428,7 +21977,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <net name="01" class="0">
 <segment>
 <wire x1="292.1" y1="25.4" x2="279.4" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="BL/SW2" gate="G$1" pin="2"/>
+<pinref part="BL" gate="G$1" pin="2"/>
 <label x="287.02" y="25.4" size="1.778" layer="95"/>
 </segment>
 <segment>
@@ -21550,9 +22099,11 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
 <pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="83.82" y1="116.84" x2="91.44" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="83.82" y1="116.84" x2="93.98" y2="116.84" width="0.1524" layer="91"/>
 <junction x="83.82" y="116.84"/>
 <label x="88.9" y="116.84" size="1.778" layer="95"/>
+<pinref part="C13" gate="G$1" pin="1"/>
+<wire x1="93.98" y1="114.3" x2="93.98" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="TDI/PIO0_11/AD0/CT32B0_MAT3"/>
@@ -21565,6 +22116,32 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="R6" gate="G$1" pin="1"/>
 <pinref part="P+6" gate="1" pin="+12V"/>
 <wire x1="83.82" y1="129.54" x2="83.82" y2="127" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="SDA" class="0">
+<segment>
+<pinref part="SDA" gate="1" pin="P"/>
+<label x="116.84" y="137.16" size="1.778" layer="95"/>
+<wire x1="104.14" y1="137.16" x2="129.54" y2="137.16" width="0.1524" layer="91"/>
+<pinref part="R12" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PIO0_5/SDA-(20MA_SINK)"/>
+<wire x1="119.38" y1="99.06" x2="109.22" y2="99.06" width="0.1524" layer="91"/>
+<label x="109.22" y="99.06" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="SCL" class="0">
+<segment>
+<pinref part="SCL" gate="1" pin="P"/>
+<label x="116.84" y="144.78" size="1.778" layer="95"/>
+<wire x1="129.54" y1="144.78" x2="104.14" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="R13" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="G$1" pin="PIO0_4/SCL-(20MA_SINK)"/>
+<wire x1="119.38" y1="101.6" x2="109.22" y2="101.6" width="0.1524" layer="91"/>
+<label x="109.22" y="101.6" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
