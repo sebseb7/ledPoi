@@ -20,12 +20,12 @@
 #ifndef __ADC_H 
 #define __ADC_H
 
-#define ADC_INTERRUPT_FLAG    1	/* 1 is interrupt driven, 0 is polling */
+#define ADC_INTERRUPT_FLAG    0	/* 1 is interrupt driven, 0 is polling */
 #define BURST_MODE            1 /* Burst mode works in interrupt driven mode only. */
 #define ADGINTEN              0	/* global DONE flag generate interrupt */
 #define TENBIT_MODE           0	/* 10-bit mode */
 #define LOWPWR_MODE           0	/* Low-power mode */
-#define ADC_DEBUG             1
+#define ADC_DEBUG             0
 #define ADC_DEBUG_CLEAR_CNT   (100) /* Number of samples until statistics are cleared */
 #define ADC_DEBUG_UPDATE_CNT  (5000) /* Number of samples until statistics are cleared */
 
@@ -41,7 +41,7 @@
 //#define ADC_CLK               6000000		/* set to 6.0Mhz - Pass at 36MHz */
 //#define ADC_CLK               8000000		/* set to 8.0Mhz - Pass at 48MHz */
 //#define ADC_CLK               10000000		/* set to 10.0Mhz - Pass at 60MHz */
-#define ADC_CLK               12000000		/* set to 12.0Mhz - Pass at 72MHz */
+#define ADC_CLK               4000000		/* set to 12.0Mhz - Pass at 72MHz */
 
 extern void ADC_IRQHandler( void );
 extern void ADCInit( uint32_t ADC_Clk );

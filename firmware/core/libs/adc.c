@@ -127,22 +127,22 @@ void ADCInit( uint32_t ADC_Clk )
   to set to analog mode. Bit 7 needs to be cleared  */
   LPC_IOCON->TDI_PIO0_11 &= ~0x9F; /*  ADC I/O config */
   LPC_IOCON->TDI_PIO0_11 |= 0x02;  /* ADC IN0 */
-  LPC_IOCON->TMS_PIO0_12 &= ~0x9F;	
-  LPC_IOCON->TMS_PIO0_12 |= 0x02;  /* ADC IN1 */
-  LPC_IOCON->TDO_PIO0_13 &= ~0x9F;	
-  LPC_IOCON->TDO_PIO0_13 |= 0x02;  /* ADC IN2 */
-  LPC_IOCON->TRST_PIO0_14 &= ~0x9F;	
-  LPC_IOCON->TRST_PIO0_14 |= 0x02;  /* ADC IN3 */
-#ifdef __SWD_DISABLED
-  LPC_IOCON->SWDIO_PIO0_15 &= ~0x9F;	
-  LPC_IOCON->SWDIO_PIO0_15 |= 0x02;  /* ADC IN4 */
-#endif
-  LPC_IOCON->PIO0_16   &= ~0x9F; /* Clear bit7, change to analog mode. */	
-  LPC_IOCON->PIO0_16   |= 0x01;  /* ADC IN5 */
-  LPC_IOCON->PIO0_22   &= ~0x9F; /* Clear bit7, change to analog mode. */	
-  LPC_IOCON->PIO0_22   |= 0x01;  /* ADC IN6 */
-  LPC_IOCON->PIO0_23   &= ~0x9F; /* Clear bit7, change to analog mode. */	
-  LPC_IOCON->PIO0_23   |= 0x01;  /* ADC IN7 */
+//  LPC_IOCON->TMS_PIO0_12 &= ~0x9F;	
+//  LPC_IOCON->TMS_PIO0_12 |= 0x02;  /* ADC IN1 */
+//  LPC_IOCON->TDO_PIO0_13 &= ~0x9F;	
+//  LPC_IOCON->TDO_PIO0_13 |= 0x02;  /* ADC IN2 */
+//  LPC_IOCON->TRST_PIO0_14 &= ~0x9F;	
+//  LPC_IOCON->TRST_PIO0_14 |= 0x02;  /* ADC IN3 */
+//#ifdef __SWD_DISABLED
+//  LPC_IOCON->SWDIO_PIO0_15 &= ~0x9F;	
+//  LPC_IOCON->SWDIO_PIO0_15 |= 0x02;  /* ADC IN4 */
+//#endif
+//  LPC_IOCON->PIO0_16   &= ~0x9F; /* Clear bit7, change to analog mode. */	
+//  LPC_IOCON->PIO0_16   |= 0x01;  /* ADC IN5 */
+//  LPC_IOCON->PIO0_22   &= ~0x9F; /* Clear bit7, change to analog mode. */	
+//  LPC_IOCON->PIO0_22   |= 0x01;  /* ADC IN6 */
+//  LPC_IOCON->PIO0_23   &= ~0x9F; /* Clear bit7, change to analog mode. */	
+//  LPC_IOCON->PIO0_23   |= 0x01;  /* ADC IN7 */
 
   LPC_ADC->CR = ( 0x01 << 1 ) |  /* SEL=1,select ADC0 channel on 0~7 ADC Channel */
 	( ( SystemCoreClock / ADC_Clk - 1 ) << 8 ) |  /* CLKDIV = Fpclk / 1000000 - 1 */ 

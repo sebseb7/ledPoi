@@ -31,5 +31,7 @@ void registerAnimation(init_fun init,tick_fun tick,deinit_fun deinit, uint16_t d
 
 void delay_ms(uint32_t); 
 
+uint32_t get_voltage(void);
+
 
 #endif

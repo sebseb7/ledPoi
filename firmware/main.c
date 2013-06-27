@@ -12,11 +12,20 @@
 
 */
 
+//#include "usb/usb_cdc.h"
+#include "core/inc/adc.h"
+
+float voltage;
 
 volatile uint32_t msTicks = 0;
 
 void SysTick_Handler(void) {
 	msTicks++;
+}
+
+uint32_t get_voltage(void)
+{
+	return (uint32_t)voltage;
 }
 
 
@@ -75,17 +84,30 @@ int main(void) {
 	leds_init();
 
 	// green red blue
+
+//	usb_init();
+//	delay_ms(1000);
 	
-	
+	ADCInit(ADC_CLK);
+
 	int current_animation = 0;
 	animations[current_animation].init_fp();
 	
 	uint32_t lap = 0;
 	uint32_t angle = 0 ; 
-	
+	delay_ms(100);
+	voltage=(ADCRead(0)/4096.0f*3.3f*4157.0f);
+	delay_ms(100);
+
 	while(1)
 	{
-		
+		if(angle == 0)
+		{
+//			usbprintf("voltage: %i\n",(uint32_t)(voltage));
+			voltage = (voltage*5.0f + (ADCRead(0)/4096.0f*3.3f*4157.0f))/6.0f;
+		}
+
+
 		struct segment_t segment;
 
 		animations[current_animation].tick_fp(lap,angle,&segment);
