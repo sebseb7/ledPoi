@@ -6,20 +6,21 @@ OPTIMIZATION = 1
 
 #########################################################################
 
-SRC=$(wildcard core/*.c)  $(wildcard core/libs/*.c) $(wildcard *.c) \
+SRC=$(wildcard core/*.c)  $(wildcard core/libs/*.c) $(wildcard *.c) $(wildcard ../libs/*.c)\
 	$(wildcard usb/*.c) \
-	../animations/rainbow.c \
-	../animations/counter_fade_wheel.c \
-	../animations/4colors.c 
+	../animations/text.c
+#	../animations/rainbow.c \
+#	../animations/counter_fade_wheel.c \
+#	../animations/4colors.c 
 
 
 
 OBJECTS= $(SRC:.c=.o) 
 LSSFILES= $(SRC:.c=.lst) 
-HEADERS=$(wildcard core/*.h) $(wildcard core/inc/*.h) $(wildcard *.h)
+HEADERS=$(wildcard core/*.h) $(wildcard core/inc/*.h) $(wildcard *.h) $(wildcard ../libs/*.h)
 
 #  Compiler Options
-GCFLAGS = -std=gnu99 -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -I. -Icore -Icore/inc
+GCFLAGS = -std=gnu99 -mcpu=cortex-m3 -mthumb -O$(OPTIMIZATION) -I. -Icore -Icore/inc -I..
 # Warnings
 GCFLAGS += -Wstrict-prototypes -Wundef -Wall -Wextra -Wunreachable-code  
 # Optimizazions
