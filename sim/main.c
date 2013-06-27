@@ -67,7 +67,7 @@ int main(int argc __attribute__((__unused__)), char *argv[] __attribute__((__unu
 	int running = 1;
 
 	uint32_t lap = 0;
-	uint32_t phase = 0;
+	int32_t phase = 0;
 
 	while(running) {
 		SDL_Event ev;
@@ -99,17 +99,16 @@ int main(int argc __attribute__((__unused__)), char *argv[] __attribute__((__unu
 		}
 
 
-		for(uint32_t angle = phase*60 ; angle < (phase+1)*60; angle++)
+		for(int32_t angle = phase*60 ; angle < (phase+1)*60; angle++)
 		{
 
 			struct segment_t segment;
 
 
-			animations[current_animation].tick_fp(lap,angle,&segment);
 
 	
 
-			SDL_Rect rect_a = { RADIUS-sinf((angle/4.0f)*M_PI/180.0f)*(RADIUS-90), RADIUS+cosf((angle/4.0f)*M_PI/180.0f)*(RADIUS-90), 2, 2};
+	/*		SDL_Rect rect_a = { RADIUS-sinf((angle/4.0f)*M_PI/180.0f)*(RADIUS-90), RADIUS+cosf((angle/4.0f)*M_PI/180.0f)*(RADIUS-90), 2, 2};
 			SDL_FillRect(
 				screen, 
 				&rect_a, 
@@ -120,7 +119,30 @@ int main(int argc __attribute__((__unused__)), char *argv[] __attribute__((__unu
 				screen, 
 				&rect_b, 
 				SDL_MapRGB(screen->format, 255,255,255)
-			);
+			);*/
+		
+			for(int x = 0; x < LED_WIDTH; x++) {
+
+				SDL_Rect rect = { RADIUS-sinf(((angle-480)/4.0f)*M_PI/180.0f)*(RADIUS-(LED_WIDTH-x)*6), RADIUS+cosf(((angle-480)/4.0f)*M_PI/180.0f)*(RADIUS-(LED_WIDTH-x)*6), 2, 2};
+				SDL_FillRect(
+					screen, 
+					&rect, 
+					SDL_MapRGB(screen->format, 0,0,0)
+				);
+
+			}
+			animations[current_animation].tick_fp(lap,angle-240,&segment);
+			for(int x = 0; x < LED_WIDTH; x++) {
+
+				SDL_Rect rect = { RADIUS-sinf(((angle-240)/4.0f)*M_PI/180.0f)*(RADIUS-(LED_WIDTH-x)*6), RADIUS+cosf(((angle-240)/4.0f)*M_PI/180.0f)*(RADIUS-(LED_WIDTH-x)*6), 2, 2};
+				SDL_FillRect(
+					screen, 
+					&rect, 
+					SDL_MapRGB(screen->format, segment.color[x].red>>1,segment.color[x].green>>1,segment.color[x].blue>>1)
+				);
+
+			}
+			animations[current_animation].tick_fp(lap,angle,&segment);
 		
 			for(int x = 0; x < LED_WIDTH; x++) {
 
