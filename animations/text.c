@@ -10,12 +10,12 @@
 static uint8_t tick(uint32_t lap, uint32_t angle, struct segment_t *segment) 
 {
 
-	const char* text = "ake -dd       ---> make -dd       ---> m";
+	const char* text = "-)     ---> make -dd         :";
 
 
 	uint32_t length = strlen(text);
 
-	uint32_t pos = (uint32_t)((angle)/6.0f);
+	uint32_t pos = (uint32_t)((angle)/8.0f);
 
 	uint32_t charpos = (pos - (pos % 6))/6; 
 
