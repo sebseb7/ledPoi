@@ -29,5 +29,8 @@ typedef uint8_t (*tick_fun)(uint32_t lap,uint32_t angle,struct segment_t *segmen
 
 void registerAnimation(init_fun init,tick_fun tick,deinit_fun deinit, uint16_t duration, uint8_t idle);
 void setLedX(uint8_t x, uint8_t r,uint8_t g,uint8_t b);
+
+uint32_t get_voltage(void);
+
 #endif
 
