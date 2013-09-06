@@ -92,7 +92,7 @@ void hsv_to_rgb(void)
 static uint8_t tick(uint32_t lap, uint32_t angle, struct segment_t *segment) 
 {
 
-	h = angle*45.51f;
+	h = angle*45.51f+lap;
 	s=255;
 	
 	//printf("%i\n",nr);
