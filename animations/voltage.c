@@ -1,4 +1,5 @@
 #include <string.h>
+#include "stdio.h"
 
 #include "main.h"
 
@@ -72,8 +73,8 @@ static uint8_t tick(uint32_t lap, uint32_t angle, struct segment_t *segment)
 
 	hsv_to_rgb();
 	
-	const char* text = "   GAGGALACKA    ";
-
+	char text[17];
+	sprintf(text,"%i",(int)get_voltage());
 
 	uint32_t length = strlen(text);
 
@@ -126,7 +127,7 @@ static void deinit(void)
 
 static void constructor(void) CONSTRUCTOR_ATTRIBUTES
 void constructor(void) {
-	registerAnimation(init,tick,deinit, 20,0);
+	registerAnimation(init,tick,deinit, 5,0);
 }
 
 
