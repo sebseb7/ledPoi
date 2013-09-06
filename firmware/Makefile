@@ -6,8 +6,10 @@ OPTIMIZATION = 1
 
 #########################################################################
 
-SRC=$(wildcard core/*.c)  $(wildcard core/libs/*.c) $(wildcard *.c) $(wildcard ../libs/*.c)\
-	$(wildcard usb/*.c) \
+SRC=$(wildcard core/*.c) $(wildcard *.c) $(wildcard ../libs/*.c)\
+	core/libs/adc.c \
+	core/libs/ssp1.c \
+	core/libs/stdio.c \
 	../animations/voltage.c \
 	../animations/text3.c \
 	../animations/rainbow.c \
