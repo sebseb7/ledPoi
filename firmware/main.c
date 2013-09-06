@@ -104,7 +104,9 @@ int main(void) {
 		if(angle == 0)
 		{
 //			usbprintf("voltage: %i\n",(uint32_t)(voltage));
-			voltage = (voltage*5.0f + (ADCRead(0)/4096.0f*3.3f*4157.0f))/6.0f;
+			voltage = ADCRead(0)/4096.0f*3.16f*4186.0f;
+			
+			//voltage = (voltage*5.0f + (ADCRead(0)/4096.0f*3.3f*4157.0f))/6.0f;
 		}
 
 

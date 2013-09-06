@@ -8,10 +8,11 @@ OPTIMIZATION = 1
 
 SRC=$(wildcard core/*.c)  $(wildcard core/libs/*.c) $(wildcard *.c) $(wildcard ../libs/*.c)\
 	$(wildcard usb/*.c) \
-	../animations/text.c
-#	../animations/rainbow.c \
-#	../animations/counter_fade_wheel.c \
-#	../animations/4colors.c 
+	../animations/text3.c \
+	../animations/rainbow.c \
+	../animations/arrows.c \
+	../animations/rgb.c \
+	../animations/4colors.c 
 
 
 

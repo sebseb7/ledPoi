@@ -5,7 +5,7 @@
 
 enum {
 	LED_WIDTH = 10,
-	RADIUS = 400,
+	RADIUS = 250,
 };
 
 struct color_t {    
