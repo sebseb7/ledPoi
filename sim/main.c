@@ -11,6 +11,10 @@
 #include<sys/time.h>
 
 
+uint32_t get_voltage(void)
+{
+	return (uint32_t)10000;
+}
 
 
 int sdlpause = 0;

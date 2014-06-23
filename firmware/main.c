@@ -85,6 +85,7 @@ int main(void) {
 
 	// green red blue
 
+//	delay_ms(1000);
 //	usb_init();
 //	delay_ms(1000);
 	
@@ -96,17 +97,15 @@ int main(void) {
 	uint32_t lap = 0;
 	uint32_t angle = 0 ; 
 	delay_ms(100);
-	voltage=(ADCRead(0)/4096.0f*3.3f*4157.0f);
+	voltage = ADCRead(0)/4096.0f*3.16f*4186.0f;
 	delay_ms(100);
 
 	while(1)
 	{
 		if(angle == 0)
 		{
-//			usbprintf("voltage: %i\n",(uint32_t)(voltage));
-			voltage = (voltage*5.0f + (ADCRead(0)/4096.0f*3.3f*4157.0f))/6.0f;
+			voltage = ADCRead(0)/4096.0f*3.16f*4186.0f;
 		}
-
 
 		struct segment_t segment;
 
@@ -116,6 +115,12 @@ int main(void) {
 		{
 			setLedX(x,segment.color[x].red,segment.color[x].green,segment.color[x].blue);
 		}
+		if(voltage < 10400.0f)
+		{
+			fillRGB(0,0,0);
+			setLedX(0,22,0,0);
+		}
+
 		leds_flush();
 
 		delay_100ns(2);
