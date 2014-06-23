@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.4">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="yes"/>
@@ -21557,6 +21557,9 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="+3V6" library="supply1" deviceset="+3V3" device=""/>
 <part name="R12" library="rcl" deviceset="R-EU_" device="R0402" value="15k"/>
 <part name="R13" library="rcl" deviceset="R-EU_" device="R0402" value="15k"/>
+<part name="D3" library="seb" deviceset="DIODE_0805" device="" value="4148"/>
+<part name="P+8" library="supply1" deviceset="+5V" device=""/>
+<part name="P+7" library="supply1" deviceset="+5V" device="" value="+5V_USB"/>
 </parts>
 <sheets>
 <sheet>
@@ -21777,6 +21780,9 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="+3V6" gate="G$1" x="86.36" y="152.4" rot="R90"/>
 <instance part="R12" gate="G$1" x="99.06" y="137.16"/>
 <instance part="R13" gate="G$1" x="99.06" y="144.78"/>
+<instance part="D3" gate="G$1" x="30.48" y="144.78"/>
+<instance part="P+8" gate="1" x="43.18" y="149.86"/>
+<instance part="P+7" gate="1" x="20.32" y="149.86"/>
 </instances>
 <busses>
 </busses>
@@ -21973,6 +21979,12 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="P+4" gate="1" pin="+5V"/>
 <wire x1="12.7" y1="48.26" x2="27.94" y2="48.26" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="P+7" gate="1" pin="+5V"/>
+<wire x1="20.32" y1="147.32" x2="20.32" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="D3" gate="G$1" pin="A"/>
+<wire x1="20.32" y1="144.78" x2="27.94" y2="144.78" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="01" class="0">
 <segment>
@@ -22079,6 +22091,12 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="P+3" gate="1" pin="+5V"/>
 <wire x1="43.18" y1="182.88" x2="43.18" y2="187.96" width="0.1524" layer="91"/>
 <junction x="43.18" y="182.88"/>
+</segment>
+<segment>
+<pinref part="D3" gate="G$1" pin="C"/>
+<wire x1="33.02" y1="144.78" x2="43.18" y2="144.78" width="0.1524" layer="91"/>
+<pinref part="P+8" gate="1" pin="+5V"/>
+<wire x1="43.18" y1="144.78" x2="43.18" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
