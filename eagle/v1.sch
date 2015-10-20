@@ -21538,7 +21538,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="GND1" library="wirepad" deviceset="SMD5" device=""/>
 <part name="MOSI" library="wirepad" deviceset="SMD5" device=""/>
 <part name="SCK" library="wirepad" deviceset="SMD5" device=""/>
-<part name="L2" library="seb" deviceset="PIS2408" device="" value="20µH/xxx mA"/>
+<part name="L1" library="seb" deviceset="PIS2408" device="" value="20µH/xxx mA"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="R0402" value="680k"/>
 <part name="R7" library="rcl" deviceset="R-EU_" device="R0402" value="220k"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
@@ -21585,7 +21585,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="P+2" gate="1" x="76.2" y="68.58"/>
 <instance part="5V" gate="1" x="78.74" y="60.96" rot="R180"/>
 <instance part="GND1" gate="1" x="2.54" y="27.94"/>
-<instance part="L2" gate="G$1" x="66.04" y="50.8"/>
+<instance part="L1" gate="G$1" x="66.04" y="50.8"/>
 <instance part="P+5" gate="1" x="15.24" y="58.42"/>
 <instance part="D1" gate="G$1" x="66.04" y="60.96" rot="R180"/>
 </instances>
@@ -21663,7 +21663,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="IC4" gate="G$1" pin="V_SW"/>
 <pinref part="C10" gate="G$1" pin="2"/>
 <pinref part="D2" gate="G$1" pin="C"/>
-<pinref part="L2" gate="G$1" pin="1"/>
+<pinref part="L1" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -21700,7 +21700,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <wire x1="76.2" y1="66.04" x2="76.2" y2="60.96" width="0.1524" layer="91"/>
 <junction x="76.2" y="60.96"/>
 <pinref part="5V" gate="1" pin="P"/>
-<pinref part="L2" gate="G$1" pin="2"/>
+<pinref part="L1" gate="G$1" pin="2"/>
 <pinref part="D1" gate="G$1" pin="A"/>
 <wire x1="68.58" y1="60.96" x2="76.2" y2="60.96" width="0.1524" layer="91"/>
 </segment>
@@ -22111,9 +22111,7 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="IC1" gate="G$1" pin="PIO1_22/RI/MOSI1"/>
 <pinref part="MOSI" gate="1" pin="P"/>
 <wire x1="231.14" y1="55.88" x2="226.06" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="SWDIO/PIO0_15/AD4/CT32B1_MAT2"/>
 <wire x1="226.06" y1="55.88" x2="220.98" y2="55.88" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="73.66" x2="114.3" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="73.66" x2="114.3" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="114.3" y1="45.72" x2="226.06" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="226.06" y1="45.72" x2="226.06" y2="55.88" width="0.1524" layer="91"/>
