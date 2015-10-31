@@ -169,6 +169,7 @@ int main(int argc __attribute__((__unused__)), char *argv[] __attribute__((__unu
 
 		
 		SDL_Flip(screen);
+		SDL_Delay(16);
 
 
 
@@ -191,7 +192,7 @@ int main(int argc __attribute__((__unused__)), char *argv[] __attribute__((__unu
 				SDL_MapRGB(screen->format,0,0,0)
 			);
 			SDL_Flip(screen);
-			SDL_Delay(300);
+			SDL_Delay(16);
 
 
 			animations[current_animation].init_fp();
