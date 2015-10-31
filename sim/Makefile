@@ -5,7 +5,7 @@ COMPILER = gcc
 
 FLAGS= -I. -I../firmware --std=gnu99 -Wall  -funsigned-char -Wundef -Wsign-compare  -Wstrict-prototypes 
 #-fsingle-precision-constant
-LDFLAGS=
+LDFLAGS= -lm
 BINEXT=
 
 ifeq ($(UNAME), Darwin)
